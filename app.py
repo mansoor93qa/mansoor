@@ -27,7 +27,10 @@ if uploaded_file is not None:
         "Histogram", "Boxplot", "Scatterplot", "Lineplot", "Barplot"
     ])
     
-    seaborn_style = st.sidebar.selectbox("Seaborn Style", sns.axes_style())
+    seaborn_styles = ['white', 'dark', 'whitegrid', 'darkgrid', 'ticks']
+seaborn_style = st.sidebar.selectbox("Seaborn Style", seaborn_styles)
+sns.set_style(seaborn_style)
+
     sns.set_style(seaborn_style)
 
     st.sidebar.markdown("### Select Columns")
